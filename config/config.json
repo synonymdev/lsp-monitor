@@ -1,0 +1,17 @@
+{
+  "ln_nodes": [
+    {
+      "cert": "/Users/reza/.polar/networks/3/volumes/lnd/dave/tls.cert",
+      "macaroon": "/Users/reza/.polar/networks/3/volumes/lnd/dave/data/chain/bitcoin/regtest/admin.macaroon",
+      "socket": "127.0.0.1:10004",
+      "type": "LND",
+      "node_name": "lnd"
+    }
+  ],
+  "slack": {
+    "url":"https://hooks.slack.com/services/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"
+  },
+  "monitor":{
+    "min_onchain_balance":9697100020
+  }
+}

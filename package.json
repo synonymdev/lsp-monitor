@@ -1,0 +1,25 @@
+{
+  "name": "blocktank-monitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synonymdev/BlockTank-Monitor.git"
+  },
+  "author": "r32a",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/synonymdev/BlockTank-Monitor/issues"
+  },
+  "homepage": "https://github.com/synonymdev/BlockTank-Monitor#readme",
+  "dependencies": {
+    "async": "^3.2.1",
+    "axios": "^0.22.0",
+    "ln-service": "^52.10.0",
+    "lodash": "^4.17.21"
+  }
+}
