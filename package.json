@@ -19,6 +19,7 @@
   "dependencies": {
     "async": "^3.2.1",
     "axios": "^0.22.0",
+    "grenache-nodejs-http": "^0.7.12",
     "ln-service": "^52.10.0",
     "lodash": "^4.17.21"
   }

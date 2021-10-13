@@ -1,7 +1,7 @@
 'use strict'
 const config = require('../config/config.json')
 const NodeMan = require('./Lightning/NodeMan')
-const Log = require('./log')
+const Log = require('./Log')
 
 const log = new Log()
 
@@ -35,7 +35,7 @@ function start () {
           log.info('wallet', 'LND balance is too low')
         }
       })
-    }, 5000)
+    }, 300000) // 5 minutes
   })
 }
 

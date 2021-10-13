@@ -8,17 +8,31 @@ const level = [
   'critical',
   'error',
   'warning',
-  'botice',
+  'notice',
   'info',
   'debug'
 ]
 
+const emoji = [
+  '🆘',
+  '🚨',
+  '‼️',
+  '❌',
+  '⚠️',
+  '📢',
+  'ℹ️',
+  ''
+]
+
 const alertLevel = [level[0], level[1], level[2]]
 
-const slackField = (title, txt) => {
+const slackField = (lvl, tag, msg) => {
+  const emj = emoji[level.indexOf(lvl)]
+  const alert = alertLevel.includes(lvl) ? '@here' : ''
+  const txt = '```' + msg + '```'
   return {
     type: 'mrkdwn',
-    text: `*${title}*\n${txt}`
+    text: `${alert}${emj} ${lvl}: *${tag}*\n${txt}`
   }
 }
 
@@ -38,7 +52,6 @@ class Log {
   _send (level, tag, desc) {
     this.batch.push([
       level,
-      Date.now(),
       tag,
       desc
     ])
@@ -56,16 +69,10 @@ class Log {
   async sendToSlack () {
     if (this.is_running) return
     this.is_running = true
-    const blocks = this.batch.map(([level, ts, tag, desc]) => {
-      const alert = alertLevel.includes(level) ? '@here 🚨' : ''
+    const blocks = this.batch.map(([lvl, tag, desc]) => {
       return {
         type: 'section',
-        fields: [
-          slackField('Timestamp', ts),
-          slackField('Level', `${alert}${level}`),
-          slackField('Tag', tag),
-          slackField('Message', desc)
-        ]
+        fields: [slackField(lvl, tag, desc)]
       }
     })
 
