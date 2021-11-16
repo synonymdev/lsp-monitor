@@ -9,7 +9,7 @@
     }
   ],
   "slack": {
-    "url":"https://hooks.slack.com/services/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"
+    "url":""
   },
   "monitor":{
     "min_onchain_balance":9697100020
